@@ -31,22 +31,19 @@
 <p align="center"><b>Created with :heart: at Blazity </b></p>
 <p align="center"><a href="https://blazity.com/">Blazity</a> is a group of Next.js/Jamstack/Headless experts. Contact us at <a href="mailto:contact@blazity.com">contact@blazity.com</a> if you’d like to talk about your project or just to have a chat with us</p>
 
-<a href="https://discord.gg/fyWtyNKmfX" style="width: 100%; display: flex; justify-content: center;">
-  <img src="https://discordapp.com/api/guilds/1111676875782234175/widget.png?style=banner2" alt="Blazity Discord Banner"/>
-</a>
-<br />
-
 ## Table Of Contents
 
-- [Features](#-features)
-- [Getting Started](#-getting-started)
-- [One click deploy](#one-click-deploy)
-- [Built With](#-built-with)
-- [Contributing](#-contributing)
+- [Table Of Contents](#table-of-contents)
+- [Features](#features)
+- [🤓 Getting Started](#-getting-started)
+- [🚀 One click deploy](#-one-click-deploy)
+- [🦙 Adding TinaCMS editing in production](#-adding-tinacms-editing-in-production)
+- [🧰 Built With](#-built-with)
+- [🤲🏻 Contributing](#-contributing)
   - [Creating A Pull Request](#creating-a-pull-request)
-- [Acknowledgements](#-acknowledgements)
-- [Contributors](#-contributors)
-- [License](#-license)
+- [😎 Acknowledgements](#-acknowledgements)
+- [✨ Contributors](#-contributors)
+- [📝 License](#-license)
 
 ## Features
 
@@ -96,6 +93,15 @@ Clone the repository and one-click deploy to Netlify for free!
 
 [![Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blazity/next-saas-starter)
 
+## 🦙 Adding TinaCMS editing in production
+
+By default, TinaCMS is disabled in production. This is so that you are not forced to use TinaCMS. To enable it, you need to create [Tina Cloud account](https://app.tina.io/), [a project](https://tina.io/docs/tina-cloud/) and fill these `NEXT_PUBLIC_ORGANIZATION_NAME`, `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN` env vars with proper values. After that you can build the editing interface by updating your build script to be.
+
+```diff
+- "build": "tinacms dev -c 'next build'",
++ "build": "tinacms build && next build"
+```
+
 ## 🧰 Built With
 
 - Statically generated pages with [**Next.js** ](https://github.com/vercel/next.js)
@@ -125,10 +131,6 @@ Big thanks to authors of these libraries:
 - https://github.com/neg4n/next-api-og-image - generating open graph images
 - https://github.com/blazity/nextjs-color-mode - non-flickering dark mode
 - https://github.com/Brew-Brew/css-in-js-media - a convenient way of creating media queries
-
-## Support
-
-If you're looking for help or simply want to share your thoughts about the project, we encourage you to join our Discord community. Here's the link: [https://blazity.com/discord](https://blazity.com/discord). It's a space where we exchange ideas and help one another. Everyone's input is appreciated, and we look forward to welcoming you.
 
 ## ✨ Contributors
 
